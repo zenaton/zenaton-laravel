@@ -186,4 +186,4 @@ in our [documentation](https://zenaton.com/documentation/php/workflow-basics/#im
 
 **Need help**? Feel free to contact us by chat on [Zenaton](https://zenaton.com/).
 
-**Found a bug?** You can open a [GitHub issue](https://github.com/zenaton/zenaton-php/issues).
+**Found a bug?** You can open a [GitHub issue](https://github.com/zenaton/zenaton-laravel/issues).
