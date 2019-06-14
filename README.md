@@ -33,12 +33,12 @@ You can find all details on [Zenaton's website](https://zenaton.com/documentatio
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [Getting started](#getting-started)
   - [Installation](#installation)
     - [Install the Zenaton Agent](#install-the-zenaton-agent)
     - [Install the Laravel package](#install-the-laravel-package)
   - [Quick start](#quick-start)
-    - [Client Initialization](#client-initialization)
     - [Executing a background job](#executing-a-background-job)
   - [Orchestrating background jobs](#orchestrating-background-jobs)
     - [Using workflows](#using-workflows)
@@ -98,7 +98,15 @@ php artisan vendor:publish --tag=zenaton-config
 
 A background job in Zenaton is a class implementing the `Zenaton\Interfaces\TaskInterface` interface.
 
-Let's start by implementing a first task printing something, and returning a value:
+Let's start by implementing a first task printing something, and returning a value.
+You can generate tasks using the `zenaton:make:task` artisan command:
+
+```sh
+php artisan zenaton:make:task HelloWorldTask
+```
+
+Open the `app/Zenaton/Tasks/HelloWorldTask.php` file that was generated for you and
+implement the `::handle()` method as the following:
 
 ```php
 namespace App\Zenaton\Tasks;
@@ -149,7 +157,14 @@ Otherwise, we won't do anything else.
 One important thing to remember is that your workflow implementation **must** be idempotent.
 You can read more about that in our [documentation](https://zenaton.com/documentation/php/workflow-basics/#implementation).
 
-The implementation looks like this:
+Let's generate the workflow class to be able to work on it using the corresponding artisan command:
+
+```sh
+php artisan zenaton:make:workflow MyFirstWorkflow
+```
+
+Open the `app/Zenaton/Workflows/MyFirstWorkflow.php` file that was generated for you
+and implement the `::handle()` method as the following:
 
 ```php
 namespace App\Zenaton\Workflows;

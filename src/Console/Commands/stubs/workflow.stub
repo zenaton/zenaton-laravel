@@ -1,0 +1,15 @@
+<?php
+
+namespace DummyNamespace;
+
+use Zenaton\Interfaces\WorkflowInterface;
+use Zenaton\Traits\Zenatonable;
+
+class DummyClass implements WorkflowInterface
+{
+    use Zenatonable;
+
+    public function handle()
+    {
+    }
+}

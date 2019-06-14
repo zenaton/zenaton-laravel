@@ -3,6 +3,8 @@
 namespace Zenaton;
 
 use Illuminate\Support\ServiceProvider;
+use Zenaton\Console\Commands\MakeTaskCommand;
+use Zenaton\Console\Commands\MakeWorkflowCommand;
 
 class ZenatonServiceProvider extends ServiceProvider
 {
@@ -12,6 +14,7 @@ class ZenatonServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPublishing();
+        $this->registerCommands();
 
         Client::init(
             config('zenaton.app_id'),
@@ -21,7 +24,24 @@ class ZenatonServiceProvider extends ServiceProvider
     }
 
     /**
+     * Register artisan commands.
+     *
+     * @return void
+     */
+    private function registerCommands()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                MakeTaskCommand::class,
+                MakeWorkflowCommand::class,
+            ]);
+        }
+    }
+
+    /**
      * Register the package's publishable resources.
+     *
+     * @return void
      */
     private function registerPublishing()
     {
