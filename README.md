@@ -116,6 +116,8 @@ use Zenaton\Traits\Zenatonable;
 
 class HelloWorldTask implements TaskInterface
 {
+    use Zenatonable;
+    
     public function handle()
     {
         echo "Hello World\n";
