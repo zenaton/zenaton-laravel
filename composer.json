@@ -4,8 +4,8 @@
     "license": "Apache-2.0",
     "require": {
         "php": ">=5.6",
-        "illuminate/support": "^5.5",
-        "zenaton/zenaton-php": "^0.5"
+        "illuminate/support": "^5.5|^6.0",
+        "zenaton/zenaton-php": "^0.6"
     },
     "config": {
         "sort-packages": true

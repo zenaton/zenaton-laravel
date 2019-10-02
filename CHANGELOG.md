@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ### Added
 
+* Added support for Laravel 6.0.
+
 ### Changed
+
+* Bumped `zenaton-php` version requirement to `^0.6`.
 
 ### Deprecated
 
