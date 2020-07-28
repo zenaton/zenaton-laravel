@@ -1,4 +1,5 @@
 {
+    "abandoned": true,
     "name": "zenaton/zenaton-laravel",
     "description": "Easily use Zenaton for background jobs in your Laravel application",
     "license": "Apache-2.0",
